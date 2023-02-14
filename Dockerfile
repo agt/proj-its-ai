@@ -21,5 +21,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y git-lfs \
 USER jovyan
 
 # Install & activate this Jupyterlab plugin
-RUN conda install -c conda-forge ipywebrtc
+RUN conda install -c conda-forge ipywebrtc && \
+    jupyter labextension install jupyter-webrtc 
 
