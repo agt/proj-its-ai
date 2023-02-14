@@ -15,4 +15,7 @@ USER root
 
 COPY workspace-public-pythonpath.sh /etc/datahub-profile.d/
 
+RUN apt-get update && apt-get install --no-install-recommends -y git-lfs \
+    && apt-get clean && apt-get -y autoremove && rm -rf /var/lib/apt/lists/* 
+
 USER jovyan
